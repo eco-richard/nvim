@@ -74,6 +74,8 @@ return {
         "clangd",
         "clang-format",
         "codelldb",
+        "haskell-language-server",
+        "java-language-server",
       },
     },
   },
