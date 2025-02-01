@@ -4,7 +4,7 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
-local servers = { "clangd", "cmake", "rust_analyzer", "gopls", "ts_ls", "java_language_server" }
+local servers = { "clangd", "cmake", "rust_analyzer", "gopls", "ts_ls", "java_language_server", "glsl_analyzer", "bashls" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
@@ -18,6 +18,14 @@ end
 
 lspconfig.cmake.setup {
   filetypes = { "cmake", "CMakeLists.txt" },
+}
+
+lspconfig.glsl_analyzer.setup {
+  filetypes = { "glsl" },
+}
+
+lspconfig.bashls.setup {
+  filetypes = { "sh" }
 }
 
 lspconfig.java_language_server.setup {
