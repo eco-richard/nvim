@@ -4,8 +4,18 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
-local servers = { "clangd", "cmake", "rust_analyzer", "gopls", "ts_ls", "java_language_server", "glsl_analyzer", "bashls",
-  "svelte" }
+local servers = {
+  "clangd",
+  "cmake",
+  "rust_analyzer",
+  "gopls",
+  "ts_ls",
+  "glsl_analyzer",
+  "bashls",
+  "svelte",
+  "eslint",
+}
+
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
@@ -26,15 +36,19 @@ lspconfig.glsl_analyzer.setup {
 }
 
 lspconfig.bashls.setup {
-  filetypes = { "sh" }
-}
-
-lspconfig.java_language_server.setup {
-  filetypes = { "java" },
+  filetypes = { "sh" },
 }
 
 lspconfig.svelte.setup {
+  filetypes = { "svelte" },
+}
 
+lspconfig.ts_ls.setup {
+  init_options = {
+    preferences = {
+      disableSuggestions = true,
+    },
+  },
 }
 
 -- configuring single server, example: typescript

@@ -72,10 +72,10 @@ return {
     opts = {
       ensure_installed = {
         "clangd",
+        "typescript-language-server",
         "clang-format",
         "codelldb",
         "haskell-language-server",
-        "java-language-server",
       },
     },
   },
